@@ -13,7 +13,7 @@ from easy_mcp.model import TransportType
 from mcp_fs.tools.directory_tools import DirectoryService
 from mcp_fs.tools.file_tools import FileService
 from mcp_fs.tools.search_tools import SearchService
-from mcp_fs.resources import sample_resource 
+from mcp_fs.resources import sample_resource
 
 
 logger = logging.getLogger(__name__)
@@ -51,7 +51,9 @@ class FileSystemMCP(BaseMCPServer):
             for dir_path in allowed_dirs
         ]
 
-        logger.info(f"FileSystemMCP initialized with allowed directories: {self.allowed_dirs}")
+        logger.info(
+            f"FileSystemMCP initialized with allowed directories: {self.allowed_dirs}"
+        )
 
         directory_service = DirectoryService(self.allowed_dirs)
         file_service = FileService(self.allowed_dirs)

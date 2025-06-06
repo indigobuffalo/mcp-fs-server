@@ -22,7 +22,9 @@ def directory_path_type(path_str: str) -> Path:
         path = Path(path_str).expanduser()
         return path
     except Exception as e:
-        raise argparse.ArgumentTypeError(f"Invalid directory path: {path_str}. Error: {e}")
+        raise argparse.ArgumentTypeError(
+            f"Invalid directory path: {path_str}. Error: {e}"
+        )
 
 
 def parse_arguments() -> argparse.Namespace:
@@ -57,15 +59,16 @@ def parse_arguments() -> argparse.Namespace:
         "--allowed-tools",
         type=str,
         help="Comma-separated list of allowed tools for the MCP server.",
-        default=""
+        default="",
     )
     parser.add_argument(
         "--allowed-resources",
         type=str,
         help="Comma-separated list of allowed resources for the MCP server.",
-        default=""
+        default="",
     )
     return parser.parse_args()
+
 
 def start(
     allowed_dirs: List[Path],
@@ -80,14 +83,14 @@ def start(
     """
     logger.info("Starting File System MCP Server...")
     logger.info(f"Allowed directories: {allowed_dirs}")
-    
+
     mcp_server = FileSystemMCP(
-    allowed_dirs=allowed_dirs,
-    transport=TransportType(transport.lower()),
-    host=host,
-    port=port,
-    allowed_tools=allowed_tools,
-    allowed_resources=allowed_resources,
+        allowed_dirs=allowed_dirs,
+        transport=TransportType(transport.lower()),
+        host=host,
+        port=port,
+        allowed_tools=allowed_tools,
+        allowed_resources=allowed_resources,
     )
 
     mcp_server.start()
@@ -97,18 +100,18 @@ def start(
 # or `python src/mcp_fs/launcher.py`
 if __name__ == "__main__":
     args = parse_arguments()
-    
+
     allowed_dirs = [Path(dir_path) for dir_path in args.allowed_dirs]
-    
+
     allowed_tools = (
-        [t.strip() for t in args.allowed_tools.split(",")] 
-        if args.allowed_tools 
+        [t.strip() for t in args.allowed_tools.split(",")]
+        if args.allowed_tools
         else None
     )
-    
+
     allowed_resources = (
-        [r.strip() for r in args.allowed_resources.split(",")] 
-        if args.allowed_resources 
+        [r.strip() for r in args.allowed_resources.split(",")]
+        if args.allowed_resources
         else None
     )
 

@@ -6,6 +6,9 @@ readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
     "easy-mcp",
+    "mcp>=1.9.0",
+    "openai>=1.79.0",
+    "openai-agents>=0.0.15",
 ]
 
 [build-system]
@@ -20,4 +23,11 @@ where = ["src"]
 
 [tool.uv.sources]
 easy-mcp = { path = "../easy-mcp" }
+
+[dependency-groups]
+dev = [
+    "ipdb>=0.13.13",
+    "pytest>=8.4.0",
+    "pytest-cov>=6.1.1",
+]
 
