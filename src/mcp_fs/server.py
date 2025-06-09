@@ -39,7 +39,7 @@ class FileSystemMCP(BaseMCPServer):
     ):
         super().__init__(
             name=name,
-            transport=transport,
+            transport_type=transport,
             host=host,
             port=port,
             allowed_tools=allowed_tools,

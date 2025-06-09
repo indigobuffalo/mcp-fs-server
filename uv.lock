@@ -218,31 +218,6 @@ wheels = [
 ]
 
 [[package]]
-name = "easy-mcp"
-version = "0.1.0"
-source = { directory = "../easy-mcp" }
-dependencies = [
-    { name = "mcp" },
-    { name = "openai" },
-    { name = "pydantic" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "mcp", specifier = ">=1.7.0" },
-    { name = "openai", specifier = ">=1.76.2" },
-    { name = "pydantic", specifier = ">=2.11.4" },
-]
-
-[package.metadata.requires-dev]
-dev = [
-    { name = "ipdb", specifier = ">=0.13.13" },
-    { name = "pyhamcrest", specifier = ">=2.1.0" },
-    { name = "pytest", specifier = ">=8.3.5" },
-    { name = "pytest-cov", specifier = ">=6.1.1" },
-]
-
-[[package]]
 name = "exceptiongroup"
 version = "1.3.0"
 source = { registry = "https://pypi.org/simple" }
@@ -533,11 +508,10 @@ wheels = [
 ]
 
 [[package]]
-name = "mcp-fs-server"
+name = "mcp-fs"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [
-    { name = "easy-mcp" },
     { name = "mcp" },
     { name = "openai" },
     { name = "openai-agents" },
@@ -552,7 +526,6 @@ dev = [
 
 [package.metadata]
 requires-dist = [
-    { name = "easy-mcp", directory = "../easy-mcp" },
     { name = "mcp", specifier = ">=1.9.0" },
     { name = "openai", specifier = ">=1.79.0" },
     { name = "openai-agents", specifier = ">=0.0.15" },
