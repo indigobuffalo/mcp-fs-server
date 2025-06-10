@@ -21,6 +21,6 @@ DEFAULT_PROMPT = f"""
 Write me a haiku about file systems under /tmp/{generate_random_string()}/{generate_random_string()}.
 If that directory does not exist, create it.
 After writing the file, append to the file with a signature of your name.
-Finally, provide the full path to the file you created.
+Finally, read me the poem and provide the full path to the file you created.
 If you encounter any issues, provide a detailed error message.
 """
