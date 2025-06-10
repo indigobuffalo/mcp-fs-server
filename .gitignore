@@ -1,0 +1,31 @@
+# Distribution / packaging
+
+.Python
+build/
+develop-eggs/
+eggs/
+**.egg-info/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+.eggs/
+.installed.cfg
+.mypy_cache/
+.pytest_cache/
+__pycache__/
+dist/
+pip-wheel-metadata/
+pip-log.txt
+
+# UV environment
+.env
+.venv
+ENV/
+env/
+venv/
+ENV.bak/
+env.bak/
+venv.bak/
