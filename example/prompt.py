@@ -7,6 +7,10 @@ def generate_random_string(length: int = 6) -> str:
     return "".join(random.choice(characters) for _ in range(length))
 
 
+# LLM_MODEL = "gpt-4.1-2025-04-14"
+LLM_MODEL = "gpt-3.5-turbo-0125"
+
+
 AGENT_NAME = "File System Agent"
 
 

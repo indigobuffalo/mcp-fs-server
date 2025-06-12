@@ -10,7 +10,7 @@ from agents.mcp import MCPServer, MCPServerSse
 from dotenv import load_dotenv
 from openai import AsyncOpenAI
 
-from prompt import AGENT_INSTRUCTIONS, AGENT_NAME, DEFAULT_PROMPT
+from prompt import AGENT_INSTRUCTIONS, AGENT_NAME, DEFAULT_PROMPT, LLM_MODEL
 
 load_dotenv()
 
@@ -64,6 +64,7 @@ async def run_agent(query: str, mcp_servers: List[MCPServer]) -> None:
         name=AGENT_NAME,
         instructions=AGENT_INSTRUCTIONS,
         mcp_servers=mcp_servers,
+        model=LLM_MODEL,
     )
 
     logger.info(f"Processing query: {query}")
